@@ -1,8 +1,10 @@
-﻿using System;
+﻿using CsvHelper;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -83,20 +85,57 @@ namespace RoflanHackathon
 
         private void button3_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog1 = new OpenFileDialog();
-            DialogResult result = openFileDialog1.ShowDialog();
-            if (result == DialogResult.OK)
+            SaveFileDialog sfd = new SaveFileDialog();
+
+            sfd.InitialDirectory = @"C:\";
+            sfd.RestoreDirectory = true;
+            sfd.FileName = "*.csv";
+            sfd.DefaultExt = "csv";
+            sfd.Filter = "csv files (*.csv)|*.csv";
+
+            if(sfd.ShowDialog() == DialogResult.OK)
             {
-                string file = openFileDialog1.FileName;
                 try
                 {
-                    Program.resultCollection.WriteToFile(file);
+                    Stream fileStream = sfd.OpenFile();
+                    StreamWriter sw = new StreamWriter(fileStream);
+                    CsvWriter csv = new CsvWriter(sw, CultureInfo.InvariantCulture);
+
+                    csv.WriteRecords(Program.resultCollection.results);
+
+                    sw.Close();
+                    fileStream.Close();
+                    csv.Dispose();
                 }
-                catch (IOException)
+                catch
                 {
+                    MessageBox.Show("Ошибка", "Файл не удалось сохранить!");
+                    return;
                 }
+
                 MessageBox.Show("Файл сохранён", "Файл сохранён");
             }
+
+            //OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            //DialogResult result = openFileDialog1.ShowDialog();
+            //if (result == DialogResult.OK)
+            //{
+            //    string file = openFileDialog1.FileName;
+            //    try
+            //    {
+            //        Program.resultCollection.WriteToFile(file);
+            //    }
+            //    catch (IOException)
+            //    {
+            //    }
+            //    MessageBox.Show("Файл сохранён", "Файл сохранён");
+            //}
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            listBox1.Items.Clear();
+            Program.groups.Clear();
         }
     }
 }

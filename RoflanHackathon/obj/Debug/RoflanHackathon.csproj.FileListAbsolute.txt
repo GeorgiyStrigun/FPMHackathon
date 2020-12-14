@@ -11,8 +11,8 @@ D:\Code\Roflohakaton\RoflanHackathon\RoflanHackathon\bin\Debug\CsvHelper.dll
 D:\Code\Roflohakaton\RoflanHackathon\RoflanHackathon\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
 D:\Code\Roflohakaton\RoflanHackathon\RoflanHackathon\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
 D:\Code\Roflohakaton\RoflanHackathon\RoflanHackathon\bin\Debug\System.Threading.Tasks.Extensions.dll
-D:\Code\Roflohakaton\RoflanHackathon\RoflanHackathon\bin\Debug\CsvHelper.xml
 D:\Code\Roflohakaton\RoflanHackathon\RoflanHackathon\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
 D:\Code\Roflohakaton\RoflanHackathon\RoflanHackathon\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 D:\Code\Roflohakaton\RoflanHackathon\RoflanHackathon\bin\Debug\System.Threading.Tasks.Extensions.xml
 D:\Code\Roflohakaton\RoflanHackathon\RoflanHackathon\obj\Debug\RoflanHackathon.csproj.CopyComplete
+D:\Code\Roflohakaton\RoflanHackathon\RoflanHackathon\obj\Debug\RoflanHackathon.csprojAssemblyReference.cache
